@@ -6,11 +6,8 @@ import androidx.lifecycle.LiveDataReactiveStreams
 import io.reactivex.rxjava3.core.BackpressureStrategy
 import io.reactivex.rxjava3.core.Observable
 import io.reactivex.rxjava3.subjects.BehaviorSubject
-import io.reactivex.rxjava3.subjects.PublishSubject
 
-fun <T> behavior() = BehaviorSubject.create<T>()
 fun <T> defaultBehavior(default: T) = BehaviorSubject.createDefault(default)
-fun <T> publishSubject() = PublishSubject.create<T>()
 
 fun <T : Any> fromPublisher(observable: Observable<T>) =
     LiveDataReactiveStreams.fromPublisher(
@@ -28,6 +25,10 @@ fun <T : Any> Observable<T>.observeAsLiveData(owner: LifecycleOwner, block: (T) 
 
 fun <T : Any> connect(owner: LifecycleOwner, observable: Observable<T>, fn: (T) -> Unit) {
     observable.observeAsLiveData(owner, fn)
+}
+
+fun <T : Any> connect(owner: LifecycleOwner, observable: Observable<T>, fn: () -> Unit) {
+    observable.observeAsLiveData(owner) { fn() }
 }
 
 fun <T> LiveData<T>.observeValue(owner: LifecycleOwner, block: (T) -> Unit) =

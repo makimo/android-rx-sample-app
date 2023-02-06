@@ -1,6 +1,6 @@
 package com.android.rx.sample.app.di
 
-import com.android.rx.sample.app.data.MainRepository
+import com.android.rx.sample.app.data.CounterRepository
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -12,5 +12,5 @@ import javax.inject.Singleton
 class AppModule {
 
     @Singleton @Provides
-    fun provideMainRepository() = MainRepository()
+    fun provideMainRepository() = CounterRepository()
 }

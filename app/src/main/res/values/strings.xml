@@ -1,4 +1,13 @@
 <resources>
     <string name="app_name">android-rx-sample-app</string>
+    <string name="range">Range: (%1$s,%2$s)</string>
     <string name="counter">Counter: %1$s</string>
+    <string name="last_update">Last update: %1$s</string>
+    <string name="plus">+</string>
+    <string name="minus">-</string>
+    <string name="toggle_adding_enabled">Toggle adding: enabled</string>
+    <string name="toggle_adding_disabled">Toggle adding: disabled</string>
+    <string name="toggle_subtraction_enabled">Toggle subtraction: enabled</string>
+    <string name="toggle_subtraction_disabled">Toggle subtraction: disabled</string>
+    <string name="date_format">yyyy-mm-dd hh:mm:ss</string>
 </resources>

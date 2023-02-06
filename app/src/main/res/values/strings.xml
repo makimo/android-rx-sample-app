@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">android-rx-sample-app</string>
+    <string name="counter">Counter: %1$s</string>
 </resources>
